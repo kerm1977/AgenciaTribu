@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>Agencia Tribu — Gestión de Viajes</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+    <script src="vendor/sql-wasm.js"></script>
+</head>
+<body>
+    <div id="toast-container" aria-live="polite"></div>
+
+    <!-- Mobile top header -->
+    <header id="mobile-header">
+        <div class="brand">
+            <img src="icons/icon.svg" alt="Agencia Tribu" id="logo-mobile" width="36" height="36">
+            <div>
+                <h1>Agencia Tribu</h1>
+                <p>Gestión de Viajes</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button id="btn-theme-mobile" class="icon-btn" title="Cambiar tema" aria-label="Cambiar tema"></button>
+            <button class="icon-btn" data-action="global-search" title="Buscar" aria-label="Buscar"></button>
+        </div>
+    </header>
+
+    <!-- Desktop sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-brand">
+            <img src="icons/icon.svg" alt="Agencia Tribu" id="logo-desktop" width="44" height="44">
+            <div>
+                <h1>Agencia Tribu</h1>
+                <span class="badge-brand">Pro CRM</span>
+            </div>
+        </div>
+        <nav id="nav-desktop" class="sidebar-nav"></nav>
+        <div class="sidebar-footer">
+            <button id="btn-theme-desktop" class="theme-toggle"></button>
+            <div id="session-card" class="session-card hidden"></div>
+        </div>
+    </aside>
+
+    <main id="main">
+        <header id="topbar-desktop">
+            <div>
+                <h2 id="topbar-title">Destinos y Viajes</h2>
+                <p id="topbar-subtitle">Gestiona paquetes, guías, vuelos e itinerarios</p>
+            </div>
+            <div class="topbar-right">
+                <button id="btn-quick-stats" class="btn-secondary">Acceso Rápido</button>
+                <span id="current-date-label" class="date-pill"></span>
+            </div>
+        </header>
+        <div id="workspace">
+            <section id="tab-destinos" class="tab-content active"></section>
+            <section id="tab-contactos" class="tab-content"></section>
+            <section id="tab-usuarios" class="tab-content"></section>
+            <section id="tab-resumen" class="tab-content"></section>
+            <section id="tab-settings" class="tab-content"></section>
+        </div>
+    </main>
+
+    <!-- Mobile bottom nav -->
+    <nav id="nav-mobile"></nav>
+
+    <div id="modal-root"></div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "appId": "com.tribu.agenciatribu",
+  "appName": "Agencia Tribu",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": true
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

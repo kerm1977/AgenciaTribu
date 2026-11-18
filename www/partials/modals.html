@@ -1,0 +1,116 @@
+<!-- Modal: Destino -->
+<div id="modal-destino" class="modal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="modal-destino-title">Crear Nuevo Destino y Viaje</h3>
+      <button class="icon-btn" data-close="modal-destino">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="form-destino" class="form-grid">
+        <input type="hidden" id="destino-id">
+        <div class="field" style="grid-column:1/-1"><label>Nombre del destino / paquete *</label>
+          <input id="dest-nombre" class="input" required></div>
+        <div class="field"><label>Guía asignado</label><input id="dest-guia" class="input"></div>
+        <div class="field"><label>Aerolínea</label><input id="dest-aerolinea" class="input"></div>
+        <div class="field"><label>Número de vuelo</label><input id="dest-vuelo" class="input"></div>
+        <div class="field"><label>Fecha</label><input id="dest-fecha" type="date" class="input"></div>
+        <div class="field"><label>Precio (USD)</label><input id="dest-precio" type="number" step="0.01" class="input"></div>
+        <div class="field"><label>URL check-in</label><input id="dest-checkin" type="url" class="input"></div>
+        <div class="field" style="grid-column:1/-1"><label>Notas</label>
+          <textarea id="dest-notas" class="input" rows="2"></textarea></div>
+        <div style="grid-column:1/-1;display:flex;justify-content:flex-end;gap:8px">
+          <button type="button" class="btn-secondary" data-close="modal-destino">Cancelar</button>
+          <button type="submit" class="btn-primary">Guardar Destino</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Detalle destino -->
+<div id="modal-detalle" class="modal">
+  <div class="modal-card">
+    <div class="modal-head"><h3>Detalle del Viaje</h3>
+      <button class="icon-btn" data-close="modal-detalle">✕</button></div>
+    <div class="modal-body" id="detalle-body"></div>
+  </div>
+</div>
+
+<!-- Modal: Contacto -->
+<div id="modal-contacto" class="modal">
+  <div class="modal-card" style="max-width:480px">
+    <div class="modal-head"><h3 id="modal-contacto-title">Nuevo Contacto</h3>
+      <button class="icon-btn" data-close="modal-contacto">✕</button></div>
+    <div class="modal-body">
+      <form id="form-contacto">
+        <input type="hidden" id="contacto-id">
+        <div class="field"><label>Nombre *</label><input id="cont-nombre" class="input" required></div>
+        <div class="field"><label>Tipo</label>
+          <select id="cont-tipo" class="input">
+            <option>Cliente</option><option>Guía</option>
+            <option>Transportista</option><option>Aerolínea/Hotel</option>
+          </select></div>
+        <div class="field"><label>Teléfono</label><input id="cont-telefono" class="input"></div>
+        <div class="field"><label>Email</label><input id="cont-email" type="email" class="input"></div>
+        <div class="field"><label>Notas</label><textarea id="cont-notas" class="input" rows="2"></textarea></div>
+        <div style="display:flex;justify-content:flex-end;gap:8px">
+          <button type="button" class="btn-secondary" data-close="modal-contacto">Cancelar</button>
+          <button type="submit" class="btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Pasajero -->
+<div id="modal-pasajero" class="modal">
+  <div class="modal-card" style="max-width:480px">
+    <div class="modal-head"><h3 id="modal-pasajero-title">Asignar Pasajero</h3>
+      <button class="icon-btn" data-close="modal-pasajero">✕</button></div>
+    <div class="modal-body">
+      <form id="form-pasajero">
+        <input type="hidden" id="pasajero-id">
+        <div class="field"><label>Nombre *</label><input id="pax-nombre" class="input" required></div>
+        <div class="field"><label>Teléfono</label><input id="pax-telefono" class="input"></div>
+        <div class="field"><label>Email</label><input id="pax-email" type="email" class="input"></div>
+        <div class="field"><label>Destino / Viaje</label><select id="pax-destino" class="input"></select></div>
+        <div class="field"><label>Asiento</label><input id="pax-asiento" class="input" placeholder="12A"></div>
+        <div class="field"><label>Estado check-in</label>
+          <select id="pax-checkin-estado" class="input">
+            <option>Pendiente</option><option>Realizado</option>
+          </select></div>
+        <div style="display:flex;justify-content:flex-end;gap:8px">
+          <button type="button" class="btn-secondary" data-close="modal-pasajero">Cancelar</button>
+          <button type="submit" class="btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Búsqueda global -->
+<div id="modal-global-search" class="modal">
+  <div class="modal-card" style="max-width:440px">
+    <div class="modal-head"><h3>Búsqueda Rápida</h3>
+      <button class="icon-btn" data-close="modal-global-search">✕</button></div>
+    <div class="modal-body">
+      <input id="global-search-input" class="input" placeholder="Buscar en toda la agencia…">
+      <div id="global-search-results" style="margin-top:14px"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Login oculto (superusuarios) -->
+<div id="modal-login" class="modal">
+  <div class="modal-card" style="max-width:380px">
+    <div class="modal-head"><h3>Acceso Superusuario</h3>
+      <button class="icon-btn" data-close="modal-login">✕</button></div>
+    <div class="modal-body">
+      <form id="form-login">
+        <div class="field"><label>Email</label><input id="login-email" type="email" class="input" required></div>
+        <div class="field"><label>Contraseña</label><input id="login-pass" type="password" class="input" required></div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Entrar</button>
+      </form>
+    </div>
+  </div>
+</div>
