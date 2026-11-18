@@ -1,11 +1,22 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp" android:height="108dp"
     android:viewportWidth="108" android:viewportHeight="108">
-    <path android:strokeColor="#ffffff" android:strokeWidth="4.5" android:strokeAlpha="0.9"
+    <!-- dashed trail -->
+    <path android:strokeColor="#ffffff" android:strokeWidth="2.4"
+        android:strokeAlpha="0.85" android:strokeLineCap="round"
         android:fillColor="#00000000"
-        android:pathData="M54,54 m-36,0 a36,36 0 1,0 72,0 a36,36 0 1,0 -72,0"/>
-    <path android:fillColor="#ffffff"
-        android:pathData="M72,36 L59,59 L50,72 L50,50 L36,50 Z"/>
-    <path android:fillColor="#bbf7d0"
-        android:pathData="M36,72 L50,50 L59,36 L59,59 L72,59 Z"/>
+        android:pathData="M19,88 C30,84 40,80 48,74 S63,61 67,53"
+        android:strokeDashArray="5.4,5" />
+    <!-- pin -->
+    <path android:fillColor="#ffffff" android:fillAlpha="0.95"
+        android:pathData="M82,86 a5,5 0 1,1 0,10 a5,5 0 1,1 0,-10 M82,95 L74,85 A7.5,7.5 0 1,1 90,85 Z"/>
+    <path android:strokeColor="#ffffff" android:strokeWidth="2"
+        android:strokeAlpha="0.9" android:fillColor="#00000000"
+        android:pathData="M82,82 m-11,0 a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0"/>
+    <!-- paper plane -->
+    <group android:rotation="-18" android:translateX="54" android:translateY="50">
+        <path android:fillColor="#ffffff" android:pathData="M-25,2 L30,-13 L-9,13 Z"/>
+        <path android:fillColor="#dcfce7" android:pathData="M-25,2 L30,-13 L4,-5 Z"/>
+        <path android:fillColor="#d1d5db" android:pathData="M-9,13 L4,-5 L13,10 Z"/>
+    </group>
 </vector>
