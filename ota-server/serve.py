@@ -59,7 +59,8 @@ if __name__ == '__main__':
     a = ap.parse_args()
     Handler.www = os.path.abspath(a.www)
     handler = functools.partial(Handler, directory=Handler.www)
-    with socketserver.TCPServer(('', a.port), handler) as httpd:
+    socketserver.ThreadingTCPServer.allow_reuse_address = True
+    with socketserver.ThreadingTCPServer(('', a.port), handler) as httpd:
         print(f'OTA server listo → http://{lan_ip()}:{a.port}')
         print('Configura esta URL en Ajustes → Proveedor OTA de la app.')
         httpd.serve_forever()

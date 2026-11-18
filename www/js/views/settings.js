@@ -49,6 +49,19 @@ export function renderSettings() {
 
       <div class="card" style="max-width:640px;margin-top:16px">
         <h3 style="font-size:15px;font-weight:700;color:var(--text-strong);margin-bottom:12px">
+          Repositorio GitHub</h3>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:8px">
+          Clona el proyecto en otra computadora con esta ruta:</p>
+        <input id="st-repo" class="input" readonly
+          value="https://github.com/kerm1977/AgenciaTribu.git"
+          style="font-family:monospace;font-size:13px">
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+          <button class="btn-secondary" id="st-copy-repo">${icon('cloud')} Copiar ruta</button>
+        </div>
+      </div>
+
+      <div class="card" style="max-width:640px;margin-top:16px">
+        <h3 style="font-size:15px;font-weight:700;color:var(--text-strong);margin-bottom:12px">
           Tema</h3>
         <div style="display:flex;gap:8px">
           <button class="btn-secondary" data-set-theme="light">${icon('sun')} Claro</button>
@@ -71,6 +84,12 @@ export function renderSettings() {
             : `Sin actualizaciones (v${i.current})`);
     };
     el.querySelector('#st-apply').onclick = () => applyUpdate();
+    el.querySelector('#st-copy-repo').onclick = async () => {
+      const url = el.querySelector('#st-repo').value;
+      try { await navigator.clipboard.writeText(url); }
+      catch { el.querySelector('#st-repo').select(); }
+      toast('Ruta copiada');
+    };
     el.querySelector('#st-logout').onclick = () => {
         logout(); toast('Sesión cerrada');
         document.dispatchEvent(new CustomEvent('auth:changed'));

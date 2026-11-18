@@ -23,5 +23,5 @@ const P = {
     cloud: 'M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.99 5.99 0 000 14a6 6 0 006 6h13a5 5 0 00.35-9.96z'
 };
 export function icon(name, cls = '') {
-    return `<svg class="${cls}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="${P[name] || P.map}"/></svg>`;
+    return `<svg class="${cls}" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="${P[name] || P.map}"/></svg>`;
 }
